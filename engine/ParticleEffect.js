@@ -2,7 +2,7 @@ import { Particle } from "./particle.js";
 import { Vector2 } from "./vector2.js";
 
 const CELL_SIZE = 25;
-const NUM_OF_PARTICLES = 300;
+const NUM_OF_PARTICLES = 1500;
 
 export class ParticleEffect {
     constructor(canvas) {
@@ -46,6 +46,11 @@ export class ParticleEffect {
             Math.floor(x / CELL_SIZE),
             Math.floor(y / CELL_SIZE)
         )
+    }
+
+    // Returns true if given grid index is outside flow field
+    outOfBounds({ x, y }) {
+        return x < 0 | y < 0 | x >= this.columns | y >= this.rows;
     }
 
     render() {
