@@ -9,8 +9,8 @@ canvas.height = window.innerHeight
 
 ctx.fillStyle = "white";
 ctx.strokeStyle = "white";
-ctx.lineWidth = 5;
-ctx.globalAlpha = 0.25;
+ctx.lineWidth = 3;
+ctx.globalAlpha = 0.55;
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
 

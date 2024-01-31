@@ -1,7 +1,10 @@
 import { Vector2 } from "./vector2.js";
 
 const MIN_SPEED = 5
-const MAX_SPEED = 10;
+const MAX_SPEED = 7;
+const MIN_HISTORY = 10;
+const MAX_HISTORY = 40;
+
 export class Particle {
     constructor(effect) {
         this.effect = effect;
@@ -14,6 +17,7 @@ export class Particle {
         for (let i = 0; i < this.history.length; i++) {
             context.lineTo(this.history[i].x, this.history[i].y);
         }
+        context.strokeStyle = this.color;
         context.stroke();
     }
 
@@ -55,8 +59,12 @@ export class Particle {
         this.speed = MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED);
         // stores history of position
         this.history = [Vector2.copy(this.position)];
-        this.maxHistory = Math.floor(10 + Math.random() * 50);
+        this.maxHistory = Math.floor(MIN_HISTORY + Math.random() * (MAX_HISTORY - MIN_HISTORY));
         this.timer = Math.floor(this.maxHistory + Math.random() * this.maxHistory);
+
+        const choices = ["#4287f5", "#1d60cc", "#0062ff", "#002aff", "#002aff"]
+        const random_index = Math.floor(Math.random() * choices.length)
+        this.color = choices[random_index];
     }
 }
 
