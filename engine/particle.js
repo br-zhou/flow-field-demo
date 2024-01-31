@@ -54,10 +54,9 @@ export class Particle {
         this.history = [Vector2.copy(this.position)];
         this.maxHistory = Math.floor(MIN_HISTORY + Math.random() * (MAX_HISTORY - MIN_HISTORY));
 
-        // const choices = ["#4287f5", "#1d60cc", "#0062ff", "#002aff", "#002aff"]
-        // const random_index = Math.floor(Math.random() * choices.length)
-        // this.color = choices[random_index];
-        this.color = "white"
+        const choices = ["#1d60cc", "#0062ff", "#002aff", "#002aff"]
+        const random_index = Math.floor(Math.random() * choices.length)
+        this.color = choices[random_index];
     }
 }
 
