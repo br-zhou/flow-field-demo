@@ -1,10 +1,10 @@
 import { Particle } from "./particle.js";
 import { Vector2 } from "./vector2.js";
 
-const CELL_SIZE = 15;
-const NUM_OF_PARTICLES = 5000;
-const CURVE = 3;
-const ZOOM = 0.05;
+const CELL_SIZE = 25;
+const NUM_OF_PARTICLES = 250;
+const CURVE = 1;
+const ZOOM = 0.1;
 
 export class ParticleEffect {
     constructor(canvas) {
